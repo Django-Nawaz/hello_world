@@ -1,0 +1,18 @@
+{% extends 'admin/index.html'%}
+{% load render_table from django_tables2 %}
+{% load static %}
+<!doctype html>
+<html>
+    <head>
+        <link rel="stylesheet" href="{% static 'django_tables2/themes/paleblue/css/screen.css' %}" />
+    </head>
+    <body>
+        {% block content %}
+        {% render_table people %}
+            {% for foo in people %}
+                {{ foo }}
+            {% endfor %}
+
+        {% endblock %}
+    </body>
+</html>

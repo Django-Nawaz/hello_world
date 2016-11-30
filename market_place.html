@@ -1,0 +1,19 @@
+{% extends 'admin/app_index.html'%}
+{% load render_table from django_tables2 %}
+{% load static %}
+{% load carton_tags %}
+{% get_cart as cart %}
+<!doctype html>
+<html>
+    <head>
+        <link rel="stylesheet" href="{% static 'django_tables2/themes/paleblue/css/screen.css' %}" />
+    </head>
+    <body>        
+        {% block content %}
+        <h1>Crops Table</h1>
+        {% render_table crops %}
+        <h1>Store Table</h1>
+        {% render_table stores %}
+        {% endblock %}
+    </body>
+</html>

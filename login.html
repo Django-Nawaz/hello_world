@@ -1,0 +1,15 @@
+{% extends "admin/login.html"%}
+{%block content%}
+<h1>{{header_s}}</h1>
+<form action="#" method = "POST">
+<table>
+{% csrf_token %}
+{{form.as_table}}
+
+</table>
+
+<button type="submit" value="Submit">Login as {{type_of}}</button>
+
+</form>
+
+{%endblock%}
